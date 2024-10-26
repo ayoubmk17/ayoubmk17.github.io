@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myProfile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="full-name-bar">
+        <h1>Ayoub Mourfik</h1>
+    </header>
+
+    <!-- À propos de moi -->
+    <section class="about-me">
+        <div><img src="IMG_0687.jpg" alt="my picture"></div>
+        <div >
+            <h2>À propos de moi</h2>
+            <p>Je suis profondément passionné par ce que je fais et j'aime constamment me surpasser pour atteindre de nouveaux sommets et aussi passionné par la musique.</p>
+        </div>
+    </section>
+
+    <!-- Mes loisirs et Objectifs -->
+    <section class="heto">
+        <h2>Hobbies et Objectifs</h2>
+        <h3>Mes hobbies</h3>
+        <ul>
+            <li>Sport</li>
+            <li>Lecture</li>
+            <li>La cuisine</li>
+        </ul>
+        <h3>Mes objectifs pour cette année</h3>
+        <ol>
+            <li>Apprendre l'espagnol</li>
+            <li>Lire 3 livres</li>
+            <li>Je garde le troisième objectif pour moi, c'est un défi personnel.</li>
+        </ol>
+    </section>
+
+    <!-- Tableau de mes amis -->
+    <section>
+        <center>
+            <h2>Tableau d'Amis</h2>
+            <table>
+                <tr>
+                    <th>Nom</th>
+                    <th>Âge</th>
+                    <th>Ville</th>
+                    <th>Profil</th>
+                </tr>
+                <tr>
+                    <td>Abbassid</td>
+                    <td>22</td>
+                    <td>Casablanca</td>
+                    <td><a href="http://Nyckboy.github.io">Voir le profil</a></td>
+                </tr>
+                <tr>
+                    <td>Elhafri</td>
+                    <td>20</td>
+                    <td>Casablanca</td>
+                    <td><a href="https://exemple.com/bob">Voir le profil</a></td>
+                </tr>
+                <tr>
+                    <td>Fertat</td>
+                    <td>20</td>
+                    <td>Casablanca</td>
+                    <td><a href="https://exemple.com/charlie">Voir le profil</a></td>
+                </tr>
+                <tr>
+                    <td>Kotb</td>
+                    <td>19</td>
+                    <td>Casablanca</td>
+                    <td><a href="https://exemple.com/charlie">Voir le profil</a></td>
+                </tr>
+            </table>
+     </center>
+    </section>
+
+    <!-- Formulaire de contact -->
+    <section>
+        <h2><center>Formulaire de Contact</center></h2>
+        <form id="contactForm">
+            <label for="name">Nom:</label>
+            <br>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="email">Email:</label>
+            <br>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="message">Message:</label>
+            <br>
+            <textarea id="message" name="message" required></textarea>
+            <br>
+            <button type="button" id="button" onclick="validateForm()">Envoyer</button>
+        </form>
+    </section>
+
+    <!-- Validation JavaScript -->
+    <script>
+        function validateForm() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            if (name === "" || email === "" || message === "") {
+                alert("Veuillez remplir tous les champs.");
+                return false;
+            }
+
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+                alert("Veuillez entrer une adresse email valide.");
+                return false;
+            }
+
+            alert("Formulaire soumis avec succès !");
+            document.getElementById("contactForm").reset();
+            return true;
+        }
+    </script>
+
+</body>
+</html>
